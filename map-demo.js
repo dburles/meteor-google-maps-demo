@@ -16,7 +16,7 @@ if (Meteor.isClient) {
     }
   });
 
-  Template.body.created = function() {
+  Template.body.onCreated(function() {
     // We can use the `ready` callback to interact with the map API once the map is ready.
     GoogleMaps.ready('exampleMap', function(map) {
       // Add a marker to the map once it's ready
@@ -25,5 +25,5 @@ if (Meteor.isClient) {
         map: map.instance
       });
     });
-  };
+  });
 }
